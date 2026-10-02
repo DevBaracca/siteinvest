@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Devenez investisseur dans Baracca, la coopérative d'habitat mobile et biosourcé. Levée de fonds de 300k€.">
+  <title>Investir - Baracca</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+         <a href="index.html" class="logo"><img src="assets/images/logo-baracca-bandeau.png" alt="" width="300" height="62"/></a>
+        <ul class="nav-links">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="projet.html">Le Projet</a></li>
+          <li><a href="investir.html" class="active">Investir</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#investor-space" class="btn-primary">Accéder à l'espace investisseurs</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="min-height: 60vh;">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1>Devenez acteur de la transition habitat</h1>
+        <p>Rejoignez la coopérative Baracca et investissez dans un projet innovant, écologique et rentable.</p>
+        <a href="#comment-investir" class="btn-cta">Comment investir ?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modèle Coopératif Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Pourquoi investir dans Baracca ?</h2>
+      <div class="fade-in" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-2xl); align-items: center;">
+        <div>
+          <p style="font-size: var(--font-size-h3); color: var(--black); margin-bottom: var(--spacing-md);">
+            Baracca est une <strong>coopérative (SCIC)</strong> où chaque investisseur devient sociétaire.
+          </p>
+          <p>
+            Contrairement aux modèles traditionnels, notre approche repose sur la <strong>gouvernance partagée</strong> : 1 part = 1 voix, quelle que soit la somme investie.
+          </p>
+          <p>
+            En investissant dans Baracca, vous ne soutenez pas seulement un projet innovant, vous en devenez un acteur clé, avec un droit de regard sur les décisions stratégiques.
+          </p>
+        </div>
+        <div style="background-image: url('assets/images/cooperative.jpg'); background-size: cover; background-position: center; height: 400px; border-radius: var(--border-radius);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objectif Section -->
+  <section class="section" style="background-color: var(--gray-light);">
+    <div class="container">
+      <h2 class="section-title fade-in">Notre objectif : 300 000 €</h2>
+      <div class="fade-in" style="max-width: 800px; margin: 0 auto;">
+        <p class="section-subtitle">
+          Ces fonds nous permettront de finaliser le développement de nos premiers modules, de lancer la production et de déployer nos solutions sur le marché.
+        </p>
+        
+        <!-- Barre de progression -->
+        <div style="margin: var(--spacing-xl) 0;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+            <span><strong id="amount-raised">250 000</strong> € collectés</span>
+            <span><strong>300 000</strong> € (objectif)</span>
+          </div>
+          <div style="height: 20px; background-color: var(--gray-border); border-radius: var(--border-radius); overflow: hidden;">
+            <div id="progress-bar" style="height: 100%; width: 83%; background-color: var(--primary); border-radius: var(--border-radius); transition: width 1s ease;"></div>
+          </div>
+        </div>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="42">0</span>
+            <span class="stat-label">Investisseurs</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="12">0</span>
+            <span class="stat-label">Modules en production</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="50">0</span>
+            <span class="stat-label">Demandes en attente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contreparties Section -->
+  <section id="comment-investir" class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Contreparties</h2>
+      <p class="section-subtitle fade-in">En fonction de votre investissement, bénéficiez d'avantages exclusifs.</p>
+      
+      <div class="fade-in">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Montant</th>
+              <th>Contreparties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>À partir de 1 000 €</strong></td>
+              <td>
+                <ul style="margin: 0; padding-left: var(--spacing-md);">
+                  <li>Accès à l'espace investisseurs réservé</li>
+                  <li>Invitation aux assemblées générales</li>
+                  <li>Newsletter exclusive avec les actualités du projet</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>À partir de 5 000 €</strong></td>
+              <td>
+                <ul style="margin: 0; padding-left: var(--spacing-md);">
+                  <li>Tous les avantages précédents</li>
+                  <li><strong>Réduction de 5% sur l'achat d'un module</strong></li>
+                  <li>Visite guidée d'un module en construction</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>À partir de 10 000 €</strong></td>
+              <td>
+                <ul style="margin: 0; padding-left: var(--spacing-md);">
+                  <li>Tous les avantages précédents</li>
+                  <li><strong>Réduction de 10% sur l'achat d'un module</strong></li>
+                  <li>Accès prioritaire aux nouveaux modules</li>
+                  <li>Mention de votre nom sur notre site (si vous le souhaitez)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>À partir de 20 000 €</strong></td>
+              <td>
+                <ul style="margin: 0; padding-left: var(--spacing-md);">
+                  <li>Tous les avantages précédents</li>
+                  <li><strong>Réduction de 15% sur l'achat d'un module</strong></li>
+                  <li>Un module personnalisé à votre nom</li>
+                  <li>Invitation à des événements exclusifs</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment Investir Section -->
+  <section class="section" style="background-color: var(--gray-light);">
+    <div class="container">
+      <h2 class="section-title fade-in">Comment investir ?</h2>
+      <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-xl);">
+        <div class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14,2 14,8 20,8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <h3>1. Prenez contact</h3>
+          <p>Remplissez notre formulaire de contact ou envoyez-nous un email pour exprimer votre intérêt.</p>
+          <a href="contact.html" class="btn-secondary" style="margin-top: var(--spacing-sm);">Nous contacter</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14,2 14,8 20,8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <h3>2. Recevez les documents</h3>
+          <p>Nous vous enverrons les statuts de la coopérative, le business plan et le contrat d'investissement.</p>
+          <a href="investisseurs.html" class="btn-secondary" style="margin-top: var(--spacing-sm);">Accéder à l'espace investisseurs</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 17l-5-5 5-5"></path>
+              <path d="M12 17l5-5-5-5"></path>
+              <path d="M12 17V7"></path>
+            </svg>
+          </div>
+          <h3>3. Signez et investissez</h3>
+          <p>Une fois les documents signés, effectuez votre virement pour devenir officiellement sociétaire.</p>
+          <a href="contact.html" class="btn-secondary" style="margin-top: var(--spacing-sm);">Demander un contrat</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Espace Investisseurs Section -->
+  <section id="investor-space" class="section">
+    <div class="container">
+      <div class="fade-in" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2>Espace réservé aux investisseurs</h2>
+        <p style="margin-bottom: var(--spacing-xl);">
+          Accédez aux documents exclusifs : statuts de la coopérative, business plan détaillé, suivi financier et actualités réservées.
+        </p>
+        <a href="investisseurs.html" class="btn-cta">Accéder à l'espace investisseurs</a>
+        <p style="margin-top: var(--spacing-md); font-size: var(--font-size-small); color: var(--gray);">
+          <em>Un mot de passe est requis pour accéder à cette section.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="section">
+    <div class="container">
+      <div class="fade-in" style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <h2>Prêt à investir dans Baracca ?</h2>
+        <p style="margin-bottom: var(--spacing-xl);">
+          Rejoignez-nous dès aujourd'hui et devenez acteur de la révolution de l'habitat mobile et écologique.
+        </p>
+        <a href="contact.html" class="btn-cta">Nous contacter pour investir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Baracca</h4>
+          <p>L'habitat mobile, biosourcé et réversible.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens</h4>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="projet.html">Le Projet</a></li>
+            <li><a href="investir.html">Investir</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">CGU</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Baracca. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Mettre à jour la barre de progression en fonction du montant collecté
+    document.addEventListener('DOMContentLoaded', () => {
+      const amountRaised = 250000; // Montant actuel (à mettre à jour)
+      const goal = 300000;
+      const progress = (amountRaised / goal) * 100;
+      document.getElementById('progress-bar').style.width = `${progress}%`;
+      document.getElementById('amount-raised').textContent = amountRaised.toLocaleString('fr-FR');
+    });
+  </script>
+</body>
+</html>

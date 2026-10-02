@@ -1,0 +1,65 @@
+---
+
+## 🚀 Déploiement
+
+### Option 1 : Déploiement sur **Netlify** (recommandé)
+
+1. **Créez un compte** sur [Netlify](https://www.netlify.com/) (gratuit).
+2. **Glissez-déposez** le dossier `baracca-website` dans l'interface Netlify.
+3. **Attendez** quelques secondes : votre site sera en ligne !
+4. **Personnalisez** le nom de domaine (ex: `baracca.netlify.app`).
+
+> ✅ **Avantages** : Déploiement en 1 clic, SSL automatique, formulaires gérés (Netlify Forms).
+
+---
+
+### Option 2 : Déploiement sur **GitHub Pages**
+
+1. **Créez un dépôt GitHub** (ex: `baracca-website`).
+2. **Poussez** le code dans le dépôt.
+3. **Activez GitHub Pages** :
+   - Allez dans **Settings > Pages**.
+   - Sélectionnez la branche `main` et le dossier `/ (root)`.
+   - Cliquez sur **Save**.
+4. **Votre site sera disponible** à l'URL : `https://votre-utilisateur.github.io/baracca-website/`
+
+> ⚠️ **Note** : Les formulaires ne fonctionneront pas avec GitHub Pages (utilisez Netlify).
+
+---
+
+## ⚙️ Personnalisation
+
+### 1. Modifier le contenu
+- **Textes** : Éditez directement les fichiers `.html` avec un éditeur de code (VS Code, Sublime Text, etc.).
+- **Images** : Remplacez les images dans `assets/images/` par vos propres visuels.
+- **Couleurs** : Modifiez les variables CSS dans `assets/css/style.css` (ex: `--primary: #4A9B8E;`).
+
+### 2. Mettre à jour le compteur de levée de fonds
+Dans le fichier `investir.html` et `investisseurs.html`, modifiez la valeur :
+```javascript
+const amountRaised = 250000; // Remplacez par le montant actuel
+
+------------
+
+Dans le fichier assets/js/script.js, modifiez la ligne :
+const INVESTOR_PASSWORD = 'Baracca2024'; // Remplacez par votre mot de passe
+
+------------
+
+ Ajouter des documents dans l'espace investisseurs
+
+Placez vos fichiers PDF dans un dossier assets/documents/ et mettez à jour les liens dans investisseurs.html :
+<a href="assets/documents/statuts-baracca.pdf" download>Télécharger</a>
+5. Activer les formulaires (Netlify)
+
+Pour que le formulaire de contact fonctionne :
+
+    Ajoutez l'attribut netlify à la balise <form> dans contact.html :
+    <form id="contact-form" netlify>
+    Déployez sur Netlify (voir ci-dessus).
+    Vérifiez les soumissions dans l'onglet Forms de votre tableau de bord Netlify.
+
+---------------
+
+
+

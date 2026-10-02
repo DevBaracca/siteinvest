@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Espace réservé aux investisseurs de Baracca. Accédez aux documents exclusifs et au suivi financier.">
+  <title>Espace Investisseurs - Baracca</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <style>
+    /* Styles spécifiques à la page investisseurs */
+    .password-prompt {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    
+    .password-container {
+      background-color: var(--white);
+      padding: var(--spacing-xl);
+      border-radius: var(--border-radius);
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    
+    .password-container h2 {
+      margin-bottom: var(--spacing-md);
+      color: var(--black);
+    }
+    
+    .password-container p {
+      margin-bottom: var(--spacing-lg);
+      color: var(--gray);
+    }
+    
+    .password-container input {
+      width: 100%;
+      padding: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+      border: 1px solid var(--gray-border);
+      border-radius: var(--border-radius);
+      font-size: var(--font-size-body);
+      font-family: var(--font-family);
+    }
+    
+    .password-container input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+    }
+    
+    .investor-content {
+      padding: var(--spacing-2xl) 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo"><img src="assets/images/logo-baracca-bandeau.png" alt="" width="300" height="62"/></a>
+        <ul class="nav-links">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="projet.html">Le Projet</a></li>
+          <li><a href="investir.html">Investir</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="investir.html" class="btn-primary">Retour</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Espace Investisseurs (protégé par mot de passe) -->
+  <div id="password-prompt" class="password-prompt">
+    <div class="password-container">
+      <h2>Espace Investisseurs</h2>
+      <p>Cet espace est réservé aux investisseurs de Baracca. Veuillez entrer le mot de passe pour accéder aux documents.</p>
+      <input type="password" id="password-input" placeholder="Entrez le mot de passe" required>
+      <button id="password-submit" class="btn-cta" style="width: 100%;">Accéder</button>
+      <p style="margin-top: var(--spacing-md); font-size: var(--font-size-small); color: var(--gray);">
+        <em>Ce mot de passe vous a été communiqué lors de votre investissement.</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- Contenu réservé -->
+  <div id="investor-content" class="hidden">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <h1>Bienvenue dans l'espace investisseurs</h1>
+          <p>Retrouvez ici tous les documents et informations réservés aux membres de la coopérative Baracca.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suivi Financier Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Suivi financier</h2>
+        <div class="fade-in" style="max-width: 800px; margin: 0 auto;">
+          <p class="section-subtitle">Suivez en temps réel l'avancement de la levée de fonds et l'utilisation des investissements.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-xl); margin: var(--spacing-xl) 0;">
+            <div class="stat-item">
+              <span class="stat-number" data-target="250000">0</span>
+              <span class="stat-label">Euros collectés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="300000">300 000</span>
+              <span class="stat-label">Objectif</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="42">0</span>
+              <span class="stat-label">Investisseurs</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="12">0</span>
+              <span class="stat-label">Modules en production</span>
+            </div>
+          </div>
+          
+          <!-- Barre de progression -->
+          <div style="margin: var(--spacing-xl) 0;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+              <span><strong id="investor-amount-raised">250 000</strong> € collectés</span>
+              <span><strong>300 000</strong> € (objectif)</span>
+            </div>
+            <div style="height: 20px; background-color: var(--gray-border); border-radius: var(--border-radius); overflow: hidden;">
+              <div id="investor-progress-bar" style="height: 100%; width: 83%; background-color: var(--primary); border-radius: var(--border-radius); transition: width 1s ease;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="section" style="background-color: var(--gray-light);">
+      <div class="container">
+        <h2 class="section-title fade-in">Documents</h2>
+        <p class="section-subtitle fade-in">Téléchargez les documents officiels de la coopérative Baracca.</p>
+        
+        <div class="fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md);">
+          <div class="card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3>Statuts de la coopérative</h3>
+            <p>Document officiel décrivant les règles de fonctionnement de Baracca SCIC.</p>
+            <a href="assets/documents/statuts-baracca.pdf" download class="btn-secondary" style="margin-top: var(--spacing-sm);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: var(--spacing-xs);">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7,10 12,15 17,10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Télécharger (PDF)
+            </a>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3>Business Plan</h3>
+            <p>Présentation détaillée de la stratégie, des objectifs et des prévisions financières.</p>
+            <a href="assets/documents/business-plan-baracca.pdf" download class="btn-secondary" style="margin-top: var(--spacing-sm);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: var(--spacing-xs);">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7,10 12,15 17,10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Télécharger (PDF)
+            </a>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3>Contrat type</h3>
+            <p>Modèle de contrat d'investissement pour devenir sociétaire.</p>
+            <a href="assets/documents/contrat-type-baracca.pdf" download class="btn-secondary" style="margin-top: var(--spacing-sm);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: var(--spacing-xs);">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7,10 12,15 17,10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Télécharger (PDF)
+            </a>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3>Règlement intérieur</h3>
+            <p>Règles de gouvernance et de fonctionnement interne de la coopérative.</p>
+            <a href="assets/documents/reglement-interieur-baracca.pdf" download class="btn-secondary" style="margin-top: var(--spacing-sm);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: var(--spacing-xs);">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7,10 12,15 17,10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Télécharger (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actualités Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Actualités</h2>
+        <p class="section-subtitle fade-in">Découvrez les dernières nouvelles de Baracca.</p>
+        
+        <div class="cards fade-in">
+          <div class="card">
+            <p style="font-size: var(--font-size-small); color: var(--gray); margin-bottom: var(--spacing-xs);">15 mai 2024</p>
+            <h3>Nouveau module déployé à Lyon</h3>
+            <p>Notre premier module en centre-ville a été installé à Lyon, marquant une étape clé dans notre développement.</p>
+            <a href="#" class="btn-secondary" style="margin-top: var(--spacing-sm);">En savoir plus</a>
+          </div>
+          
+          <div class="card">
+            <p style="font-size: var(--font-size-small); color: var(--gray); margin-bottom: var(--spacing-xs);">10 avril 2024</p>
+            <h3>Assemblée générale 2024</h3>
+            <p>Notre assemblée générale annuelle aura lieu le 30 juin 2024. Tous les sociétaires sont invités à y participer.</p>
+            <a href="#" class="btn-secondary" style="margin-top: var(--spacing-sm);">Voir le détail</a>
+          </div>
+          
+          <div class="card">
+            <p style="font-size: var(--font-size-small); color: var(--gray); margin-bottom: var(--spacing-xs);">5 mars 2024</p>
+            <h3>Partenariat avec ÉcoBois</h3>
+            <p>Nous avons signé un partenariat stratégique avec ÉcoBois pour l'approvisionnement en bois certifié.</p>
+            <a href="#" class="btn-secondary" style="margin-top: var(--spacing-sm);">Lire l'article</a>
+          </div>
+          
+          <div class="card">
+            <p style="font-size: var(--font-size-small); color: var(--gray); margin-bottom: var(--spacing-xs);">1er février 2024</p>
+            <h3>Lancement de la levée de fonds</h3>
+            <p>Notre campagne de levée de fonds a été officiellement lancée. Objectif : 300 000 € pour accélérer notre développement.</p>
+            <a href="#" class="btn-secondary" style="margin-top: var(--spacing-sm);">Voir le communiqué</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prochaines Étapes Section -->
+    <section class="section" style="background-color: var(--gray-light);">
+      <div class="container">
+        <h2 class="section-title fade-in">Prochaines étapes</h2>
+        <div class="fade-in" style="max-width: 800px; margin: 0 auto;">
+          <p class="section-subtitle">Voici les grandes étapes à venir pour Baracca.</p>
+          
+          <div style="margin: var(--spacing-xl) 0;">
+            <div style="display: flex; align-items: flex-start; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+              <div style="width: 100px; flex-shrink: 0;">
+                <div style="height: 2px; background-color: var(--primary); width: 100%; margin-bottom: var(--spacing-sm);"></div>
+                <p style="font-size: var(--font-size-small); color: var(--gray);">Juin 2024</p>
+              </div>
+              <div>
+                <h3>Finalisation de la levée de fonds</h3>
+                <p>Nous prévoyons d'atteindre notre objectif de 300 000 € d'ici la fin du mois de juin.</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+              <div style="width: 100px; flex-shrink: 0;">
+                <div style="height: 2px; background-color: var(--primary); width: 100%; margin-bottom: var(--spacing-sm);"></div>
+                <p style="font-size: var(--font-size-small); color: var(--gray);">Septembre 2024</p>
+              </div>
+              <div>
+                <h3>Lancement de la production</h3>
+                <p>Dès que la levée de fonds sera terminée, nous lancerons la production en série de nos modules.</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+              <div style="width: 100px; flex-shrink: 0;">
+                <div style="height: 2px; background-color: var(--primary); width: 100%; margin-bottom: var(--spacing-sm);"></div>
+                <p style="font-size: var(--font-size-small); color: var(--gray);">Décembre 2024</p>
+              </div>
+              <div>
+                <h3>Premières livraisons</h3>
+                <p>Les premiers modules seront livrés à nos clients avant la fin de l'année.</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: var(--spacing-lg);">
+              <div style="width: 100px; flex-shrink: 0;">
+                <div style="height: 2px; background-color: var(--gray-border); width: 100%; margin-bottom: var(--spacing-sm);"></div>
+                <p style="font-size: var(--font-size-small); color: var(--gray);">2025</p>
+              </div>
+              <div>
+                <h3>Expansion nationale</h3>
+                <p>Nous prévoyons d'étendre notre activité à l'ensemble du territoire français.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="fade-in" style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <h2>Besoin d'aide ?</h2>
+          <p style="margin-bottom: var(--spacing-xl);">
+            Pour toute question sur votre investissement ou sur les documents, n'hésitez pas à nous contacter.
+          </p>
+          <a href="contact.html" class="btn-cta">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Baracca</h4>
+          <p>L'habitat mobile, biosourcé et réversible.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens</h4>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="projet.html">Le Projet</a></li>
+            <li><a href="investir.html">Investir</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">CGU</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Baracca. Tous droits réservés. | Espace réservé aux investisseurs.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Mettre à jour la barre de progression pour les investisseurs
+    document.addEventListener('DOMContentLoaded', () => {
+      const amountRaised = 250000; // Montant actuel (à mettre à jour)
+      const goal = 300000;
+      const progress = (amountRaised / goal) * 100;
+      document.getElementById('investor-progress-bar').style.width = `${progress}%`;
+      document.getElementById('investor-amount-raised').textContent = amountRaised.toLocaleString('fr-FR');
+    });
+  </script>
+</body>
+</html>
