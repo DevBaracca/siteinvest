@@ -166,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initMobileMenu();
   initContactForm();
+  initCurrentYear();  // <-- Ajoutez cette ligne
   document.body.classList.add('loaded');
 });
 
@@ -200,5 +201,15 @@ function updateCounter(elementId, newValue) {
   if (counter) {
     counter.textContent = newValue.toLocaleString('fr-FR');
     counter.dataset.target = newValue;
+  }
+
+} 
+// ============================================
+// 10. Année dynamique (Footer)
+// ============================================
+function initCurrentYear() {
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
   }
 }
